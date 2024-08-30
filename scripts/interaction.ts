@@ -31,11 +31,12 @@ async function main() {
 
     // Withdrawal Interaction
 
-    const Withdrawal = ethers.parseUnits("40", 18);
+    const Withdrawal = ethers.parseUnits("10", 18);
 
     const withdrawTx = await saveERC20.withdraw(Withdrawal);
 
     await withdrawTx.wait();
+    console.log(withdrawTx);
 
     const contractBalanceAfterWithdrawal = await saveERC20.getContractBalance();
 
